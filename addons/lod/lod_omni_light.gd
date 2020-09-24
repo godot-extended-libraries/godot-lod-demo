@@ -26,8 +26,10 @@ export(float, 0.0, 1.0, 0.1) var light_fade_start := 0.8
 # Set this accordingly depending on your camera movement speed.
 # The default value should suit most projects already.
 # Note: Slow cameras don't need to have LOD-enabled objects update their status often.
-# This can overridden by setting the project setting `lod/refresh_rate`.
-var refresh_rate := 0.25
+# By default, lights have their LOD updated faster than other LOD nodes since their
+# light/shadow intensity needs to change as smoothly as posible.
+# This can overridden by setting the project setting `lod/light_refresh_rate`.
+var refresh_rate := 0.05
 
 # The LOD bias in units.
 # Positive values will decrease the detail level and improve performance.
@@ -45,8 +47,8 @@ var base_light_energy := light_energy
 func _ready() -> void:
 	if ProjectSettings.has_setting("lod/bias"):
 		lod_bias = ProjectSettings.get_setting("lod/bias")
-	if ProjectSettings.has_setting("lod/refresh_rate"):
-		refresh_rate = ProjectSettings.get_setting("lod/refresh_rate")
+	if ProjectSettings.has_setting("lod/light_refresh_rate"):
+		refresh_rate = ProjectSettings.get_setting("lod/light_refresh_rate")
 
 	# Add random jitter to the timer to ensure LODs don't all swap at the same time.
 	randomize()
@@ -71,14 +73,20 @@ func _physics_process(delta: float) -> void:
 
 	var distance := camera.global_transform.origin.distance_to(global_transform.origin) + lod_bias
 
-	# FIXME: Attenuation formulas aren't correct.
 	visible = distance < light_max_distance
-	# =MIN($C$1, MAX(0, $C$1 - D2/($B$1)*$C$1)/1/(1-$A$1)
-	light_energy = clamp(
-		distance / (light_max_distance/1.0/(1.0-light_fade_start)),
-		0.0,
-		1.0) * base_light_energy
+	var light_fade_start_distance := light_max_distance * light_fade_start
+	if distance > light_fade_start_distance:
+		light_energy = max(0, (1 - (distance - light_fade_start_distance) / (light_max_distance - light_fade_start_distance)) * base_light_energy)
+	else:
+		# We're close enough to the light to show it at full brightness.
+		light_energy = base_light_energy
 
 	shadow_enabled = distance < shadow_max_distance
-	var shadow_value := min(1, -shadow_fade_start + (distance / shadow_max_distance))
+	var shadow_fade_start_distance := shadow_max_distance * shadow_fade_start
+	var shadow_value: float
+	if distance > shadow_fade_start_distance:
+		shadow_value = min(1, (distance - shadow_fade_start_distance) / (shadow_max_distance - shadow_fade_start_distance))
+	else:
+		# We're close enough to the light to show its shadow at full darkness.
+		shadow_value = 0.0
 	shadow_color = Color(shadow_value, shadow_value, shadow_value)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://lod_mesh_instance.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fps_label.gd" type="Script" id=2]
 [ext_resource path="res://addons/lod/lod_omni_light.gd" type="Script" id=3]
+[ext_resource path="res://addons/lod/lod_spot_light.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 10.0
@@ -518,6 +519,38 @@ light_color = Color( 1, 0.345098, 0.196078, 1 )
 light_energy = 15.0
 shadow_enabled = true
 script = ExtResource( 3 )
+
+[node name="LODSpotLights" type="Spatial" parent="."]
+
+[node name="LODSpotLight" type="SpotLight" parent="LODSpotLights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 6, -1 )
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 25.0
+spot_angle_attenuation = 10.0
+script = ExtResource( 4 )
+shadow_max_distance = 25.0
+light_max_distance = 40.0
+
+[node name="LODSpotLight2" type="SpotLight" parent="LODSpotLights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 6, -8 )
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 25.0
+spot_angle_attenuation = 10.0
+script = ExtResource( 4 )
+shadow_max_distance = 25.0
+light_max_distance = 40.0
+
+[node name="LODSpotLight3" type="SpotLight" parent="LODSpotLights"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 15, 6, -16 )
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 25.0
+spot_angle_attenuation = 10.0
+script = ExtResource( 4 )
+shadow_max_distance = 25.0
+light_max_distance = 40.0
 
 [node name="FPSLabel" type="Label" parent="."]
 margin_left = 16.0
