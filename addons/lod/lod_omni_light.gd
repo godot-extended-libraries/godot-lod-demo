@@ -28,6 +28,12 @@ export(float, 0.0, 1.0, 0.1) var light_fade_start := 0.8
 # This can overridden by setting the project setting `lod/refresh_rate`.
 var refresh_rate := 0.25
 
+# The LOD bias in units.
+# Positive values will decrease the detail level and improve performance.
+# Negative values will improve visual appearance at the cost of performance.
+# This can overridden by setting the project setting `lod/bias`.
+var lod_bias := 0.0
+
 # The internal refresh timer.
 var timer := 0.0
 
@@ -36,6 +42,8 @@ var base_light_energy := light_energy
 
 
 func _ready() -> void:
+	if ProjectSettings.has_setting("lod/bias"):
+		lod_bias = ProjectSettings.get_setting("lod/bias")
 	if ProjectSettings.has_setting("lod/refresh_rate"):
 		refresh_rate = ProjectSettings.get_setting("lod/refresh_rate")
 
@@ -57,7 +65,7 @@ func _physics_process(delta: float) -> void:
 
 	timer = 0.0
 
-	var distance := camera.global_transform.origin.distance_to(global_transform.origin)
+	var distance := camera.global_transform.origin.distance_to(global_transform.origin) + lod_bias
 
 	# FIXME: Attenuation formulas aren't correct.
 	visible = distance < light_max_distance

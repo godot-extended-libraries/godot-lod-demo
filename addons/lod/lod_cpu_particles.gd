@@ -17,11 +17,19 @@ export(float, 0.0, 1000.0, 0.1) var max_emit_distance := 30
 # This can overridden by setting the project setting `lod/refresh_rate`.
 var refresh_rate := 0.25
 
+# The LOD bias in units.
+# Positive values will decrease the detail level and improve performance.
+# Negative values will improve visual appearance at the cost of performance.
+# This can overridden by setting the project setting `lod/bias`.
+var lod_bias := 0.0
+
 # The internal refresh timer.
 var timer := 0.0
 
 
 func _ready() -> void:
+	if ProjectSettings.has_setting("lod/bias"):
+		lod_bias = ProjectSettings.get_setting("lod/bias")
 	if ProjectSettings.has_setting("lod/refresh_rate"):
 		refresh_rate = ProjectSettings.get_setting("lod/refresh_rate")
 
@@ -43,5 +51,5 @@ func _physics_process(delta: float) -> void:
 
 	timer = 0.0
 
-	var distance := camera.global_transform.origin.distance_to(global_transform.origin)
+	var distance := camera.global_transform.origin.distance_to(global_transform.origin) + lod_bias
 	emitting = distance < max_emit_distance
