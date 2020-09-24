@@ -1,7 +1,7 @@
 # Copyright © 2020 Hugo Locurcio and contributors - MIT License
 # See `LICENSE.md` included in the source distribution for details.
 extends SpotLight
-class_name LODSpotLight
+class_name LODSpotLight, "lod_spot_light.svg"
 
 # The rate at which LODs will be updated (in seconds). Lower values are more reactive
 # but use more CPU, which is especially noticeable with large amounts of LOD-enabled nodes.

@@ -1,7 +1,7 @@
 # Copyright © 2020 Hugo Locurcio and contributors - MIT License
 # See `LICENSE.md` included in the source distribution for details.
 extends CPUParticles
-class_name LODCPUParticles
+class_name LODCPUParticles, "lod_cpu_particles.svg"
 
 # If `false`, LOD won't update anymore. This can be used for performance comparison
 # purposes.

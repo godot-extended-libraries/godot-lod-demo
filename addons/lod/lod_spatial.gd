@@ -1,7 +1,7 @@
 # Copyright © 2020 Hugo Locurcio and contributors - MIT License
 # See `LICENSE.md` included in the source distribution for details.
 extends Spatial
-class_name LODSpatial
+class_name LODSpatial, "lod_spatial.svg"
 
 # If `false`, LOD won't update anymore. This can be used for performance comparison
 # purposes.

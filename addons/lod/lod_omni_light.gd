@@ -1,7 +1,7 @@
 # Copyright © 2020 Hugo Locurcio and contributors - MIT License
 # See `LICENSE.md` included in the source distribution for details.
 extends OmniLight
-class_name LODOmniLight
+class_name LODOmniLight, "lod_omni_light.svg"
 
 # If `false`, LOD won't update anymore. This can be used for performance comparison
 # purposes.

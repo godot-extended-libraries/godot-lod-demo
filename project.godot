@@ -35,11 +35,11 @@ _global_script_classes=[ {
 "path": "res://addons/lod/lod_spot_light.gd"
 } ]
 _global_script_class_icons={
-"LODCPUParticles": "",
-"LODOmniLight": "",
-"LODParticles": "",
-"LODSpatial": "",
-"LODSpotLight": ""
+"LODCPUParticles": "res://addons/lod/lod_cpu_particles.svg",
+"LODOmniLight": "res://addons/lod/lod_omni_light.svg",
+"LODParticles": "res://addons/lod/lod_particles.svg",
+"LODSpatial": "res://addons/lod/lod_spatial.svg",
+"LODSpotLight": "res://addons/lod/lod_spot_light.svg"
 }
 
 [application]

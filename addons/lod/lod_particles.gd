@@ -1,7 +1,7 @@
 # Copyright © 2020 Hugo Locurcio and contributors - MIT License
 # See `LICENSE.md` included in the source distribution for details.
 extends Particles
-class_name LODParticles
+class_name LODParticles, "lod_particles.svg"
 
 # If `false`, LOD won't update anymore. This can be used for performance comparison
 # purposes.
