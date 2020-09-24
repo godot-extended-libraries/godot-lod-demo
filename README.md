@@ -1,5 +1,7 @@
 # Level of Detail (LOD) add-on demo project
 
+![Screenshot](https://raw.githubusercontent.com/Calinou/media/master/godot-lod-demo/screenshot.png)
+
 This repository contains the demo project for the
 [Level of Detail (LOD) add-on](https://github.com/Calinou/godot-lod).
 The add-on's code is included in this repository and is mirrored periodically.
