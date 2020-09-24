@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/lod/lod_mesh_instance.gd" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.835294, 0.278431, 0.278431, 1 )
+
+[sub_resource type="SphereMesh" id=2]
+material = SubResource( 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.886275, 0.603922, 0.121569, 1 )
+
+[sub_resource type="SphereMesh" id=4]
+material = SubResource( 3 )
+radial_segments = 32
+rings = 16
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.992157, 0.937255, 0.486275, 1 )
+distance_fade_mode = 3
+distance_fade_min_distance = 38.0
+distance_fade_max_distance = 25.0
+
+[sub_resource type="SphereMesh" id=6]
+material = SubResource( 5 )
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SpatialMaterial" id=7]
+
+[node name="LODMeshInstance" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="MeshInstance-lod0" type="MeshInstance" parent="."]
+cast_shadow = 0
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="MeshInstance-lod1" type="MeshInstance" parent="."]
+visible = false
+cast_shadow = 0
+mesh = SubResource( 4 )
+material/0 = null
+
+[node name="MeshInstance-lod2" type="MeshInstance" parent="."]
+visible = false
+cast_shadow = 0
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="ShadowCaster" type="MeshInstance" parent="."]
+material_override = SubResource( 7 )
+cast_shadow = 3
+mesh = SubResource( 6 )
+material/0 = null
