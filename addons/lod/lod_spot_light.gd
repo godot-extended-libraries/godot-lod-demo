@@ -8,14 +8,14 @@ class_name LODSpotLight, "lod_spot_light.svg"
 export var enable_lod := true
 
 # The maximum shadow distance in units. Past this distance, the shadow will be disabled.
-export(float, 0.0, 1000.0, 0.1) var shadow_max_distance := 15
+export(float, 0.0, 1000.0, 0.1) var shadow_max_distance := 25
 
 # The distance factor at which the shadow starts fading.
 # A value of 0.0 will result in the smoothest transition whereas a value of 1.0 disables fading.
 export(float, 0.0, 1.0, 0.1) var shadow_fade_start := 0.8
 
 # The maximum shadow distance in units. Past this distance, the light will be hidden.
-export(float, 0.0, 1000.0, 0.1) var light_max_distance := 30
+export(float, 0.0, 1000.0, 0.1) var light_max_distance := 50
 
 # The distance factor at which the light starts fading.
 # A value of 0.0 will result in the smoothest transition whereas a value of 1.0 disables fading.

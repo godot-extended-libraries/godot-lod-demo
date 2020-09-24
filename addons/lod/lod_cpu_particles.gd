@@ -8,7 +8,7 @@ class_name LODCPUParticles, "lod_cpu_particles.svg"
 export var enable_lod := true
 
 # The maximum particle emitting distance in units. Past this distance, particles will no longer emit.
-export(float, 0.0, 1000.0, 0.1) var max_emit_distance := 30
+export(float, 0.0, 1000.0, 0.1) var max_emit_distance := 50
 
 # The rate at which LODs will be updated (in seconds). Lower values are more reactive
 # but use more CPU, which is especially noticeable with large amounts of LOD-enabled nodes.

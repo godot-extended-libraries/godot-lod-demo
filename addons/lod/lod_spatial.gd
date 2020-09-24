@@ -15,7 +15,7 @@ export(float, 0.0, 1000.0, 0.1) var lod_1_max_distance := 25
 
 # The maximum LOD 2 (low quality) distance in units.
 # Past this distance, all LOD variants are hidden.
-export(float, 0.0, 1000.0, 0.1) var lod_2_max_distance := 38
+export(float, 0.0, 1000.0, 0.1) var lod_2_max_distance := 100
 
 # The rate at which LODs will be updated (in seconds). Lower values are more reactive
 # but use more CPU, which is especially noticeable with large amounts of LOD-enabled nodes.

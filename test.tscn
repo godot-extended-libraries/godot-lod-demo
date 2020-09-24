@@ -6,7 +6,7 @@
 [ext_resource path="res://addons/lod/lod_spot_light.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
-length = 10.0
+length = 12.0
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera:translation")
@@ -15,10 +15,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 5, 10 ),
+"times": PoolRealArray( 0, 6, 12 ),
 "transitions": PoolRealArray( -2, -2, -2 ),
 "update": 0,
-"values": [ Vector3( -3.63263, 2.1872, 3.41102 ), Vector3( -27.0737, 16.301, 25.422 ), Vector3( -3.63262, 2.1872, 3.41102 ) ]
+"values": [ Vector3( -3.63263, 2.1872, 3.41102 ), Vector3( -45.7643, 27.5546, 42.9724 ), Vector3( -3.63262, 2.1872, 3.41102 ) ]
 }
 
 [sub_resource type="SpatialMaterial" id=2]
@@ -31,7 +31,7 @@ size = Vector2( 72, 72 )
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.684521, 0.292993, -0.667523, 0, 0.915677, 0.401915, 0.728993, -0.275119, 0.6268, -3.63262, 2.1872, 3.41102 )
+transform = Transform( 0.684521, 0.292993, -0.667522, 0, 0.915677, 0.401915, 0.728993, -0.275119, 0.6268, -3.63263, 2.1872, 3.41102 )
 near = 0.1
 far = 500.0
 
@@ -529,7 +529,6 @@ shadow_enabled = true
 spot_range = 25.0
 spot_angle_attenuation = 10.0
 script = ExtResource( 4 )
-shadow_max_distance = 25.0
 light_max_distance = 40.0
 
 [node name="LODSpotLight2" type="SpotLight" parent="LODSpotLights"]
@@ -539,7 +538,6 @@ shadow_enabled = true
 spot_range = 25.0
 spot_angle_attenuation = 10.0
 script = ExtResource( 4 )
-shadow_max_distance = 25.0
 light_max_distance = 40.0
 
 [node name="LODSpotLight3" type="SpotLight" parent="LODSpotLights"]
@@ -549,7 +547,6 @@ shadow_enabled = true
 spot_range = 25.0
 spot_angle_attenuation = 10.0
 script = ExtResource( 4 )
-shadow_max_distance = 25.0
 light_max_distance = 40.0
 
 [node name="FPSLabel" type="Label" parent="."]
