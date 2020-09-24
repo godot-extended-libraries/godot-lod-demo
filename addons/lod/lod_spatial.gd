@@ -18,8 +18,9 @@ export(float, 0.0, 1000.0, 0.1) var lod_2_max_distance := 38
 
 # The rate at which LODs will be updated (in seconds). Lower values are more reactive
 # but use more CPU, which is especially noticeable with large amounts of LOD-enabled nodes.
-# Set this accordingly depending on your camera movement speed. Slow cameras
-# don't need to have LOD-enabled objects update their status often.
+# Set this accordingly depending on your camera movement speed.
+# The default value should suit most projects already.
+# Note: Slow cameras don't need to have LOD-enabled objects update their status often.
 # This can overridden by setting the project setting `lod/refresh_rate`.
 var refresh_rate := 0.25
 

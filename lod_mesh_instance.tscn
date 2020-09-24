@@ -1,6 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://addons/lod/lod_spatial.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://addons/lod/lod_particles.gd" type="Script" id=3]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.835294, 0.278431, 0.278431, 1 )
@@ -29,6 +31,33 @@ rings = 8
 
 [sub_resource type="SpatialMaterial" id=7]
 
+[sub_resource type="Gradient" id=11]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+width = 16
+
+[sub_resource type="ParticlesMaterial" id=8]
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector3( 0, 6, 0 )
+scale = 0.5
+color_ramp = SubResource( 12 )
+
+[sub_resource type="SpatialMaterial" id=9]
+flags_transparent = true
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+params_billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="QuadMesh" id=10]
+material = SubResource( 9 )
+
 [node name="LODMeshInstance" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -54,3 +83,9 @@ material_override = SubResource( 7 )
 cast_shadow = 3
 mesh = SubResource( 6 )
 material/0 = null
+
+[node name="LODParticles" type="Particles" parent="."]
+cast_shadow = 0
+process_material = SubResource( 8 )
+draw_pass_1 = SubResource( 10 )
+script = ExtResource( 3 )
