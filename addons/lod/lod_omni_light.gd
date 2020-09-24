@@ -3,7 +3,8 @@
 extends OmniLight
 class_name LODOmniLight
 
-# If `false`, LOD won't be running anymore.
+# If `false`, LOD won't update anymore. This can be used for performance comparison
+# purposes.
 export var enable_lod := true
 
 # The maximum shadow distance in units. Past this distance, the shadow will be disabled.
@@ -47,6 +48,9 @@ func _ready() -> void:
 	if ProjectSettings.has_setting("lod/refresh_rate"):
 		refresh_rate = ProjectSettings.get_setting("lod/refresh_rate")
 
+	# Add random jitter to the timer to ensure LODs don't all swap at the same time.
+	randomize()
+	timer += rand_range(0, refresh_rate)
 
 # Despite LOD not being related to physics, we chose to run in `_physics_process()`
 # to minimize the amount of method calls per second (and therefore decrease CPU usage).

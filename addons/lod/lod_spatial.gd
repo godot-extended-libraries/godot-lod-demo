@@ -3,7 +3,8 @@
 extends Spatial
 class_name LODSpatial
 
-# If `false`, LOD won't be running anymore.
+# If `false`, LOD won't update anymore. This can be used for performance comparison
+# purposes.
 export var enable_lod := true
 
 # The maximum LOD 0 (high quality) distance in units.
@@ -39,6 +40,7 @@ func _ready() -> void:
 		lod_bias = ProjectSettings.get_setting("lod/bias")
 	if ProjectSettings.has_setting("lod/refresh_rate"):
 		refresh_rate = ProjectSettings.get_setting("lod/refresh_rate")
+
 	# Add random jitter to the timer to ensure LODs don't all swap at the same time.
 	randomize()
 	timer += rand_range(0, refresh_rate)
