@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Spatial",
-"class": "LODMeshInstance",
+"base": "OmniLight",
+"class": "LODOmniLight",
 "language": "GDScript",
-"path": "res://addons/lod/lod_mesh_instance.gd"
+"path": "res://addons/lod/lod_omni_light.gd"
+}, {
+"base": "Spatial",
+"class": "LODSpatial",
+"language": "GDScript",
+"path": "res://addons/lod/lod_spatial.gd"
+}, {
+"base": "SpotLight",
+"class": "LODSpotLight",
+"language": "GDScript",
+"path": "res://addons/lod/lod_spot_light.gd"
 } ]
 _global_script_class_icons={
-"LODMeshInstance": ""
+"LODOmniLight": "",
+"LODSpatial": "",
+"LODSpotLight": ""
 }
 
 [application]

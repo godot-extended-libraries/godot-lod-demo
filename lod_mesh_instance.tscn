@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://addons/lod/lod_mesh_instance.gd" type="Script" id=1]
+[ext_resource path="res://addons/lod/lod_spatial.gd" type="Script" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.835294, 0.278431, 0.278431, 1 )

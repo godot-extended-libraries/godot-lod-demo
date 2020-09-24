@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://lod_mesh_instance.tscn" type="PackedScene" id=1]
 [ext_resource path="res://fps_label.gd" type="Script" id=2]
+[ext_resource path="res://addons/lod/lod_omni_light.gd" type="Script" id=3]
 
 [sub_resource type="Animation" id=1]
 length = 10.0
@@ -37,438 +38,486 @@ far = 500.0
 autoplay = "move_camera"
 anims/move_camera = SubResource( 1 )
 
-[node name="LODMeshInstances" type="Spatial" parent="."]
+[node name="Ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12828, -1, -5.61873 )
+mesh = SubResource( 3 )
+material/0 = null
 
-[node name="LODMeshInstance" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODSpatials" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -13 )
 
-[node name="LODMeshInstance2" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance" parent="LODSpatials" instance=ExtResource( 1 )]
+
+[node name="LODMeshInstance2" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5 )
 
-[node name="LODMeshInstance3" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance3" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 
-[node name="LODMeshInstance4" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance4" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0 )
 
-[node name="LODMeshInstance5" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance5" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -5 )
 
-[node name="LODMeshInstance6" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance6" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 5 )
 
-[node name="LODMeshInstance7" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance7" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
 
-[node name="LODMeshInstance8" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance8" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -5 )
 
-[node name="LODMeshInstance9" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance9" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 5 )
 
-[node name="LODMeshInstance10" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance10" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15 )
 
-[node name="LODMeshInstance11" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance11" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20 )
 
-[node name="LODMeshInstance12" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance12" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 
-[node name="LODMeshInstance13" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance13" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -15 )
 
-[node name="LODMeshInstance14" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance14" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -20 )
 
-[node name="LODMeshInstance15" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance15" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10 )
 
-[node name="LODMeshInstance16" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance16" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15 )
 
-[node name="LODMeshInstance17" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance17" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20 )
 
-[node name="LODMeshInstance18" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance18" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -10 )
 
-[node name="LODMeshInstance19" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance19" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15 )
 
-[node name="LODMeshInstance20" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance20" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -20 )
 
-[node name="LODMeshInstance21" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance21" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10 )
 
-[node name="LODMeshInstance22" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance22" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -15 )
 
-[node name="LODMeshInstance23" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance23" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -20 )
 
-[node name="LODMeshInstance24" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance24" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10 )
 
-[node name="LODMeshInstance25" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance25" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -15 )
 
-[node name="LODMeshInstance26" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance26" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20 )
 
-[node name="LODMeshInstance27" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance27" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10 )
 
-[node name="LODMeshInstance28" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance28" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0 )
 
-[node name="LODMeshInstance29" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance29" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5 )
 
-[node name="LODMeshInstance30" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance30" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5 )
 
-[node name="LODMeshInstance31" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance31" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0 )
 
-[node name="LODMeshInstance32" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance32" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -5 )
 
-[node name="LODMeshInstance33" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance33" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 5 )
 
-[node name="LODMeshInstance34" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance34" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0 )
 
-[node name="LODMeshInstance35" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance35" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -5 )
 
-[node name="LODMeshInstance36" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance36" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5 )
 
-[node name="LODMeshInstance37" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance37" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30 )
 
-[node name="LODMeshInstance38" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance38" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25 )
 
-[node name="LODMeshInstance39" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance39" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 35 )
 
-[node name="LODMeshInstance40" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance40" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 30 )
 
-[node name="LODMeshInstance41" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance41" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 25 )
 
-[node name="LODMeshInstance42" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance42" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 35 )
 
-[node name="LODMeshInstance43" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance43" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 30 )
 
-[node name="LODMeshInstance44" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance44" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 25 )
 
-[node name="LODMeshInstance45" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance45" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 35 )
 
-[node name="LODMeshInstance46" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance46" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15 )
 
-[node name="LODMeshInstance47" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance47" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
 
-[node name="LODMeshInstance48" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance48" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20 )
 
-[node name="LODMeshInstance49" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance49" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 15 )
 
-[node name="LODMeshInstance50" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance50" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 10 )
 
-[node name="LODMeshInstance51" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance51" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 20 )
 
-[node name="LODMeshInstance52" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance52" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 15 )
 
-[node name="LODMeshInstance53" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance53" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 10 )
 
-[node name="LODMeshInstance54" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance54" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 20 )
 
-[node name="LODMeshInstance55" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance55" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 15 )
 
-[node name="LODMeshInstance56" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance56" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10 )
 
-[node name="LODMeshInstance57" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance57" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 20 )
 
-[node name="LODMeshInstance58" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance58" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15 )
 
-[node name="LODMeshInstance59" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance59" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 10 )
 
-[node name="LODMeshInstance60" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance60" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 20 )
 
-[node name="LODMeshInstance61" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance61" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 15 )
 
-[node name="LODMeshInstance62" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance62" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10 )
 
-[node name="LODMeshInstance63" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance63" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20 )
 
-[node name="LODMeshInstance64" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance64" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 30 )
 
-[node name="LODMeshInstance65" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance65" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 25 )
 
-[node name="LODMeshInstance66" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance66" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 35 )
 
-[node name="LODMeshInstance67" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance67" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 30 )
 
-[node name="LODMeshInstance68" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance68" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 25 )
 
-[node name="LODMeshInstance69" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance69" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 35 )
 
-[node name="LODMeshInstance70" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance70" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 30 )
 
-[node name="LODMeshInstance71" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance71" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25 )
 
-[node name="LODMeshInstance72" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance72" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 35 )
 
-[node name="LODMeshInstance73" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance73" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 30 )
 
-[node name="LODMeshInstance74" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance74" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 25 )
 
-[node name="LODMeshInstance75" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance75" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 35 )
 
-[node name="LODMeshInstance76" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance76" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 30 )
 
-[node name="LODMeshInstance77" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance77" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 25 )
 
-[node name="LODMeshInstance78" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance78" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 35 )
 
-[node name="LODMeshInstance79" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance79" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 30 )
 
-[node name="LODMeshInstance80" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance80" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 25 )
 
-[node name="LODMeshInstance81" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance81" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 35 )
 
-[node name="LODMeshInstance82" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance82" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 15 )
 
-[node name="LODMeshInstance83" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance83" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 10 )
 
-[node name="LODMeshInstance84" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance84" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 20 )
 
-[node name="LODMeshInstance85" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance85" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 15 )
 
-[node name="LODMeshInstance86" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance86" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 10 )
 
-[node name="LODMeshInstance87" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance87" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 20 )
 
-[node name="LODMeshInstance88" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance88" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 15 )
 
-[node name="LODMeshInstance89" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance89" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 10 )
 
-[node name="LODMeshInstance90" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance90" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 20 )
 
-[node name="LODMeshInstance91" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance91" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 15 )
 
-[node name="LODMeshInstance92" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance92" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10 )
 
-[node name="LODMeshInstance93" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance93" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 20 )
 
-[node name="LODMeshInstance94" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance94" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 15 )
 
-[node name="LODMeshInstance95" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance95" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10 )
 
-[node name="LODMeshInstance96" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance96" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20 )
 
-[node name="LODMeshInstance97" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance97" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 15 )
 
-[node name="LODMeshInstance98" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance98" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 10 )
 
-[node name="LODMeshInstance99" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance99" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 20 )
 
-[node name="LODMeshInstance100" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance100" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 30 )
 
-[node name="LODMeshInstance101" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance101" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 25 )
 
-[node name="LODMeshInstance102" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance102" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 35 )
 
-[node name="LODMeshInstance103" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance103" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 30 )
 
-[node name="LODMeshInstance104" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance104" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 25 )
 
-[node name="LODMeshInstance105" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance105" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 35 )
 
-[node name="LODMeshInstance106" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance106" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 30 )
 
-[node name="LODMeshInstance107" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance107" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 25 )
 
-[node name="LODMeshInstance108" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance108" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 35 )
 
-[node name="LODMeshInstance109" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance109" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0 )
 
-[node name="LODMeshInstance110" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance110" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -5 )
 
-[node name="LODMeshInstance111" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance111" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 5 )
 
-[node name="LODMeshInstance112" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance112" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 0 )
 
-[node name="LODMeshInstance113" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance113" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -5 )
 
-[node name="LODMeshInstance114" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance114" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 5 )
 
-[node name="LODMeshInstance115" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance115" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 0 )
 
-[node name="LODMeshInstance116" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance116" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -5 )
 
-[node name="LODMeshInstance117" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance117" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, 5 )
 
-[node name="LODMeshInstance118" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance118" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -15 )
 
-[node name="LODMeshInstance119" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance119" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20 )
 
-[node name="LODMeshInstance120" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance120" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -10 )
 
-[node name="LODMeshInstance121" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance121" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -15 )
 
-[node name="LODMeshInstance122" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance122" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -20 )
 
-[node name="LODMeshInstance123" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance123" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, -10 )
 
-[node name="LODMeshInstance124" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance124" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -15 )
 
-[node name="LODMeshInstance125" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance125" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -20 )
 
-[node name="LODMeshInstance126" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance126" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 0, -10 )
 
-[node name="LODMeshInstance127" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance127" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15 )
 
-[node name="LODMeshInstance128" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance128" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -20 )
 
-[node name="LODMeshInstance129" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance129" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -10 )
 
-[node name="LODMeshInstance130" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance130" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15 )
 
-[node name="LODMeshInstance131" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance131" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20 )
 
-[node name="LODMeshInstance132" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance132" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10 )
 
-[node name="LODMeshInstance133" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance133" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -15 )
 
-[node name="LODMeshInstance134" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance134" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -20 )
 
-[node name="LODMeshInstance135" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance135" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10 )
 
-[node name="LODMeshInstance136" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance136" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0 )
 
-[node name="LODMeshInstance137" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance137" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5 )
 
-[node name="LODMeshInstance138" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance138" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 5 )
 
-[node name="LODMeshInstance139" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance139" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0 )
 
-[node name="LODMeshInstance140" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance140" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5 )
 
-[node name="LODMeshInstance141" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance141" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5 )
 
-[node name="LODMeshInstance142" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance142" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0 )
 
-[node name="LODMeshInstance143" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance143" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -5 )
 
-[node name="LODMeshInstance144" parent="LODMeshInstances" instance=ExtResource( 1 )]
+[node name="LODMeshInstance144" parent="LODSpatials" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 5 )
+
+[node name="LODOmniLights" type="Spatial" parent="."]
+
+[node name="LODOmniLight" type="OmniLight" parent="LODOmniLights"]
+light_energy = 15.0
+shadow_enabled = true
+script = ExtResource( 3 )
+
+[node name="LODOmniLight2" type="OmniLight" parent="LODOmniLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
+light_color = Color( 0.47451, 0.933333, 0.447059, 1 )
+light_energy = 15.0
+shadow_enabled = true
+script = ExtResource( 3 )
+
+[node name="LODOmniLight3" type="OmniLight" parent="LODOmniLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14 )
+light_color = Color( 1, 0.854902, 0.196078, 1 )
+light_energy = 15.0
+shadow_enabled = true
+script = ExtResource( 3 )
+
+[node name="LODOmniLight4" type="OmniLight" parent="LODOmniLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7 )
+light_color = Color( 0.196078, 0.960784, 1, 1 )
+light_energy = 15.0
+shadow_enabled = true
+script = ExtResource( 3 )
+
+[node name="LODOmniLight5" type="OmniLight" parent="LODOmniLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -7 )
+light_color = Color( 0.709804, 0.196078, 1, 1 )
+light_energy = 15.0
+shadow_enabled = true
+script = ExtResource( 3 )
+
+[node name="LODOmniLight6" type="OmniLight" parent="LODOmniLights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -7 )
+light_color = Color( 1, 0.345098, 0.196078, 1 )
+light_energy = 15.0
+shadow_enabled = true
+script = ExtResource( 3 )
 
 [node name="FPSLabel" type="Label" parent="."]
 margin_left = 16.0
@@ -484,8 +533,3 @@ __meta__ = {
 transform = Transform( 0.202744, 0.528988, -0.824055, 0, 0.841532, 0.540207, 0.979232, -0.109524, 0.170615, -24.3801, 15.9823, 5.04775 )
 shadow_enabled = true
 directional_shadow_blend_splits = true
-
-[node name="Ground" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.87172, -1, 7.38127 )
-mesh = SubResource( 3 )
-material/0 = null
