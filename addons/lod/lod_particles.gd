@@ -29,8 +29,8 @@ var timer := 0.0
 
 
 func _ready() -> void:
-	if ProjectSettings.has_setting("lod/bias"):
-		lod_bias = ProjectSettings.get_setting("lod/bias")
+	if ProjectSettings.has_setting("lod/particle_bias"):
+		lod_bias = ProjectSettings.get_setting("lod/particle_bias")
 	if ProjectSettings.has_setting("lod/refresh_rate"):
 		refresh_rate = ProjectSettings.get_setting("lod/refresh_rate")
 

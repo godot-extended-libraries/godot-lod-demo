@@ -45,8 +45,8 @@ var base_light_energy := light_energy
 
 
 func _ready() -> void:
-	if ProjectSettings.has_setting("lod/bias"):
-		lod_bias = ProjectSettings.get_setting("lod/bias")
+	if ProjectSettings.has_setting("lod/light_bias"):
+		lod_bias = ProjectSettings.get_setting("lod/light_bias")
 	if ProjectSettings.has_setting("lod/light_refresh_rate"):
 		refresh_rate = ProjectSettings.get_setting("lod/light_refresh_rate")
 
