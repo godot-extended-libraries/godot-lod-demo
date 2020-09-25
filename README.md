@@ -15,7 +15,9 @@ Please report issues specific to the add-on
 
 ### Using the Asset Library
 
-TODO (not uploaded yet).
+- Open the Godot project manager.
+- Navigate to the **Templates** tab and search for "lod".
+- Install the [*Level of Detail (LOD) Demo*](https://godotengine.org/asset-library/asset/730) project.
 
 ### Manual installation
 
