@@ -3,11 +3,11 @@
 ![Screenshot](https://raw.githubusercontent.com/Calinou/media/master/godot-lod-demo/screenshot.png)
 
 This repository contains the demo project for the
-[Level of Detail (LOD) add-on](https://github.com/Calinou/godot-lod).
+[Level of Detail (LOD) add-on](https://github.com/godot-extended-libraries/godot-lod).
 The add-on's code is included in this repository and is mirrored periodically.
 
 Please report issues specific to the add-on
-[here](https://github.com/Calinou/godot-lod), not in this repository.
+[here](https://github.com/godot-extended-libraries/godot-lod), not in this repository.
 
 ## Try it out
 
@@ -27,11 +27,11 @@ Manual installation lets you try pre-release versions of this demo by following 
 - Clone this Git repository:
 
 ```bash
-git clone https://github.com/Calinou/godot-lod-demo.git
+git clone https://github.com/godot-extended-libraries/godot-lod-demo.git
 ```
 
 Alternatively, you can
-[download a ZIP archive](https://github.com/Calinou/godot-lod-demo/archive/master.zip)
+[download a ZIP archive](https://github.com/godot-extended-libraries/godot-lod-demo/archive/master.zip)
 if you do not have Git installed.
 
 - Import the Godot project using the project manager and open it in the editor.
