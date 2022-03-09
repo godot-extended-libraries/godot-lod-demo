@@ -1,4 +1,4 @@
-# Level of Detail (LOD) add-on demo project
+# Level of Detail (LOD) add-on demo project for Godot 3.x
 
 ![Screenshot](https://raw.githubusercontent.com/Calinou/media/master/godot-lod-demo/screenshot.png)
 
